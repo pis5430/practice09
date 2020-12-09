@@ -17,29 +17,43 @@ public class RecListApp {
 		
 		
 		System.out.println("#사각형 4개 리스트에 추가=========================================");
+		
 		//사각형4개 리스트에 추가 코드 작성
+		rList.add(r01);
+		rList.add(r02);
+		rList.add(r03);
+		rList.add(r04);
+		
 		
 		//리스트 모두를 draw하는 메소드 실행
-		
-		
+		listAllDraw(rList);
 
 		System.out.println("#3번째 사각형(3, 3) 삭제==========================================");
+		
 		//사각형(3,3) 삭제 코드 작성
+		rList.remove(2);
 		
 		//리스트 모두를 draw하는 메소드 실행
-		
+		listAllDraw(rList);
 
 		
 		System.out.println("#4번째 사각형(4, 5)-->(9, 5)로 width 값 변경======================");
 		//사각형(2,2) 수정 코드 작성
+		r04.setWidth(9);
+		r04.setHeight(5);
+				
 
 		//리스트 모두를 draw하는 메소드 실행
-		
-		
-		
+		listAllDraw(rList);
 		
 		System.out.println("#모든 사각형의 넓이 합 출력=======================================");
 		//모든 사각형의 넓이 합 구하기 코드 작성
+		//sum = r01.area() + r02.area() +r04.area();
+		
+		for(int i=0; i<rList.size(); i++) {
+			sum += rList.get(i).area();
+		}
+		
 		
 		
 		//모든 사각형의 합 출력
@@ -53,6 +67,9 @@ public class RecListApp {
 	public static void listAllDraw(List<Rectangle> list) {
 		
 		//내용작성 
+		for(Rectangle i : list) {
+			i.draw();
+		}
 	
 	}
 	
